@@ -436,7 +436,7 @@ function App() {
               onClick={() => navigate('/')}
               className="text-3xl font-bold text-white cursor-pointer hover:text-red-400 transition-colors"
             >
-              YouTube Music
+              YT Music
             </h1>
             <div className="flex items-center gap-2">
               {/* Boton de descargas locales */}
