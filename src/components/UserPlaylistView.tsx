@@ -249,7 +249,7 @@ export function UserPlaylistView({ playlistId, onBack, onPlay, currentSong, isPl
       </div>
 
       <div className="space-y-1">
-        {visibleTracks.map((track, index) => (
+        {visibleTracks.map((track) => (
           <SongCard
             key={track.videoId}
             song={track}

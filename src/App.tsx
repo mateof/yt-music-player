@@ -27,14 +27,12 @@ function HomeView({
   onAddToPlaylist,
   playerState,
   isAuthenticated,
-  onSetQueue,
 }: {
   onPlay: (song: Song, songs: Song[], index: number) => void
   onPodcastClick: (podcastId: string) => void
   onAddToPlaylist: (song: Song) => void
   playerState: { currentSong: Song | null; isPlaying: boolean }
   isAuthenticated: boolean
-  onSetQueue: (songs: Song[], index: number) => void
 }) {
   const [searchParams] = useSearchParams()
   const [songs, setSongs] = useState<Song[]>([])
@@ -551,7 +549,6 @@ function App() {
                 onAddToPlaylist={handleAddToPlaylist}
                 playerState={playerState}
                 isAuthenticated={isAuthenticated}
-                onSetQueue={setQueue}
               />
             }
           />

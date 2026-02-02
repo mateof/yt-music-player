@@ -74,13 +74,6 @@ export function useQueue() {
     }))
   }, [generateShuffledIndices])
 
-  // Get actual index based on shuffle mode
-  const getActualIndex = useCallback((index: number, isLocal: boolean): number => {
-    if (!state.shuffle) return index
-    const indices = isLocal ? state.localShuffledIndices : state.shuffledIndices
-    return indices[index] ?? index
-  }, [state.shuffle, state.shuffledIndices, state.localShuffledIndices])
-
   // Current song/track
   const currentSong = useMemo(() => {
     if (state.currentIndex < 0 || state.currentIndex >= state.queue.length) return null

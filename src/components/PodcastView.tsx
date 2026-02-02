@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Podcast, Song, getPodcastDetails, getBackendUrl } from '../services/api'
+import { Podcast, Song, getPodcastDetails } from '../services/api'
 import { SongCard } from './SongCard'
 
 interface PodcastViewProps {
@@ -31,17 +31,6 @@ export function PodcastView({ podcastId, onBack, onPlay, currentSong, isPlaying,
       setError('Error al cargar el podcast')
     } finally {
       setLoading(false)
-    }
-  }
-
-  const handleDownloadAll = async () => {
-    if (!podcast) return
-    // Descargar episodios uno por uno
-    for (const episode of podcast.episodes) {
-      if (episode.videoId) {
-        const url = `${getBackendUrl()}/api/download/${episode.videoId}`
-        window.open(url, '_blank')
-      }
     }
   }
 
